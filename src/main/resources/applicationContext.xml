@@ -17,4 +17,18 @@
         <constructor-arg value="greeting!"/>
     </bean>
 
+    <bean id="testBean4"
+          class="roksard.spring1.TestBean">
+    </bean>
+
+    <bean id="testBean5"
+          class="roksard.spring1.TestBean">
+        <constructor-arg value="25"/>
+    </bean>
+
+    <bean id="testBean6"
+          class="roksard.spring1.TestBean">
+        <constructor-arg value="25" type="int"/>
+    </bean>
+
 </beans>
