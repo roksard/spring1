@@ -7,29 +7,33 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         TestBean testBean;
         TestBean testBean2;
-        TestBean testBean3;
-        TestBean testBean4;
-        TestBean testBean5;
-        TestBean testBean6;
+        TestBean testNewBeanCreated;
+        TestBean testDefaultConstructor;
+        TestBean testPassIntValueIntoConstructor;
+        TestBean testPassIntValueAndTypeToConstructor;
         try {
             testBean = context.getBean("testBean", TestBean.class);
             testBean2 = context.getBean("testBean", TestBean.class);
-            testBean3 = context.getBean("testBean3", TestBean.class);
-            testBean4 = context.getBean("testBean4", TestBean.class);
-            testBean5 = context.getBean("testBean5", TestBean.class);
-            testBean6 = context.getBean("testBean6", TestBean.class);
+            testNewBeanCreated = context.getBean("testNewBeanCreated", TestBean.class);
+            testDefaultConstructor = context.getBean("testDefaultConstructor", TestBean.class);
+            testPassIntValueIntoConstructor = context.getBean("testPassIntValueIntoConstructor", TestBean.class);
+            testPassIntValueAndTypeToConstructor = context.getBean("testPassIntValueAndTypeToConstructor", TestBean.class);
         } finally {
             context.close();
         }
         System.out.println("testBean: " + testBean.getName());
         System.out.println("testBean2: " + testBean2.getName());
+        System.out.println("(testBean and testBean2 is same bean object)");
         System.out.println("testBean.setName(\"no more\")");
         testBean.setName("no more");
         System.out.println("testBean: " + testBean.getName());
         System.out.println("testBean2: " + testBean2.getName());
-        System.out.println("testBean3 (should be another bean object created): " + testBean3.getName());
-        System.out.println("testBean4 (default constructor): " + testBean4.getName());
-        System.out.println("testBean5 (pass '25' to constructor, but its treated as string): " + testBean5.getName());
-        System.out.println("testBean6 (pass value='25', type='int' to constructor, should produce 'N25'): " + testBean6.getName());
+        System.out.println("(both changed name)");
+        System.out.println("testNewBeanCreated: " + testNewBeanCreated.getName() + " (should be another bean object created)");
+        System.out.println("testDefaultConstructor: " + testDefaultConstructor.getName() + " (default constructor)");
+        System.out.println("testPassIntValueIntoConstructor: " + testPassIntValueIntoConstructor.getName()
+                + " (pass '25' to constructor, but its treated as string)");
+        System.out.println("testPassIntValueAndTypeToConstructor: " + testPassIntValueAndTypeToConstructor.getName()
+                + " (pass value='25', type='int' to constructor, should produce 'N25')");
     }
 }

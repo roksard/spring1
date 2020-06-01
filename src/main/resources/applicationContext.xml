@@ -12,21 +12,21 @@
         <constructor-arg value="greeting!"/>
     </bean>
 
-    <bean id="testBean3"
+    <bean id="testNewBeanCreated"
           class="roksard.spring1.TestBean">
         <constructor-arg value="greeting!"/>
     </bean>
 
-    <bean id="testBean4"
+    <bean id="testDefaultConstructor"
           class="roksard.spring1.TestBean">
     </bean>
 
-    <bean id="testBean5"
+    <bean id="testPassIntValueIntoConstructor"
           class="roksard.spring1.TestBean">
         <constructor-arg value="25"/>
     </bean>
 
-    <bean id="testBean6"
+    <bean id="testPassIntValueAndTypeToConstructor"
           class="roksard.spring1.TestBean">
         <constructor-arg value="25" type="int"/>
     </bean>
