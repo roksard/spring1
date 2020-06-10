@@ -2,6 +2,11 @@ package roksard.spring1;
 
 public class TestBean {
     private String name;
+    private static int count = 0;
+    private int id = count++;
+    {
+        System.out.println(this.getClass().getSimpleName()  + " id=" + id + " created.");
+    }
 
     public TestBean() {
         this.name = "Default";

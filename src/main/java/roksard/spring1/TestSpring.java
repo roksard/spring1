@@ -4,7 +4,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) {
+        System.out.println("main method");
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        System.out.println("context created");
         TestBean testBean;
         TestBean testBean2;
         TestBean testNewBeanCreated;
