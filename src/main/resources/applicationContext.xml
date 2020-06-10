@@ -7,28 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="roksard.spring1.TestBean">
-        <constructor-arg value="greeting!"/>
-    </bean>
-
-    <bean id="testNewBeanCreated"
-          class="roksard.spring1.TestBean">
-        <constructor-arg value="greeting!"/>
-    </bean>
-
-    <bean id="testDefaultConstructor"
-          class="roksard.spring1.TestBean">
-    </bean>
-
-    <bean id="testPassIntValueIntoConstructor"
-          class="roksard.spring1.TestBean">
-        <constructor-arg value="25"/>
-    </bean>
-
-    <bean id="testPassIntValueAndTypeToConstructor"
-          class="roksard.spring1.TestBean">
-        <constructor-arg value="25" type="int"/>
+    <bean id="musicBean"
+          class="roksard.spring1.ClassicalMusic">
     </bean>
 
 </beans>
